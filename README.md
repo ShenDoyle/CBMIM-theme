@@ -11,11 +11,11 @@
 
 # CBMIM theme
 
-**cbm.im（南城左立方）专用主题** —— 基于 [AnZhiYu 安知鱼主题](https://github.com/anzhiyu-c/hexo-theme-anzhiyu)（`hexo-theme-anzhiyu`）的定制版本。
+**cbm.im（南城左立方）专用主题**
 
 本站仓库：<https://github.com/ShenDoyle/CBMIM-theme>　｜　站点：<https://cbm.im/>
 
-> 本主题是安知鱼主题的**派生作品**，不是新写的主题。全部上游功能、界面、文档一律继承；
+> 本主题不是新写的主题。全部上游功能、界面、文档一律继承；
 > 上游作者署名、贡献者名单、许可证与原始说明均完整保留，见 [NOTICE.md](NOTICE.md) 与 [`upstream/`](upstream/)。
 
 ---
