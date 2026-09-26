@@ -51,6 +51,7 @@
 | 日期 | 说明 |
 |---|---|
 | 2026-09-26 | 自上游 v1.7.1（commit `07114b6`，dev 分支）建立派生分支；上述修改生效；`README.md` 改写为 CBMIM theme 自有说明，上游 README 归档至 `upstream/` |
+| 2026-09-26（二） | 主题定名落地：目录/配置/包名全面切换 `cbmim`（`layout/includes/cbmim/`、`source/js/cbmim/`、`/cbmim/random.js`、`hexo-theme-cbmim`）；默认配置中的上游品牌项（头像、收款码、页脚徽章、AI 助手名、控制台打印文案）中性化；**刻意保留** CSS 类名 `anzhiyufont`/`anzhiyu-icon-*`、CSS 变量 `--anzhiyu-*`、JS 全局对象 `anzhiyu` 等内部标识符（改名会破坏样式与交互，不构成品牌暴露），以及上游第三方资源包 `anzhiyu-theme-static` 的功能依赖 |
 
 ## 三、合规要点
 

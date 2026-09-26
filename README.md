@@ -34,31 +34,47 @@
 
 | 文件 | 改动 |
 |---|---|
-| `_config.yml` | 默认图格式 jpg / gif / png → **webp**（`error_img.flink`、`error_img.post_page`、`valine.bg`、`cover.default_cover`） |
-| `scripts/events/merge_config.js` | 同上，默认图片路径同步改为 webp |
+| `_config.yml` | 默认图格式 jpg / gif / png → **webp**（`error_img.flink`、`error_img.post_page`、`valine.bg`、`cover.default_cover`）；默认值里的上游品牌（头像、收款码、徽章、AI 助手名等）中性化 |
+| `scripts/events/merge_config.js` | 同上，默认图片路径同步改为 webp；品牌默认值清理 |
+| `scripts/events/cdn.js` | internal CDN 包名 → `hexo-theme-cbmim` |
+| `scripts/helpers/random.js` | 随机文章路由 `/anzhiyu/random.js` → `/cbmim/random.js` |
 | `layout/includes/header/index.pug` | **修复独立页面顶部图丢失**：原写法恒用 `home_index_img_bg`，而该变量仅在首页分支赋值，导致 about / link / comments 等页面顶部图不显示 |
+| `layout/includes/` | `anzhiyu/` 子目录改名 `cbmim/`（partial 引用同步）；控制台打印文案改为 CBMIM |
+| `source/js/` | `anzhiyu/` 子目录改名 `cbmim/`（cdn.js 引用同步） |
 | `source/img/` | `404`、`comment_bg`、`default_cover`、`friend_404`、`loading` 转 webp，并删除对应的 5 个旧格式文件 |
 | `source/favicon.ico`、`source/img/512.png`、`source/img/siteicon/*` | 替换为本站图标 |
 | `README.md`、`NOTICE.md`、`upstream/*` | 本仓库自有文档与上游原文归档，不影响运行时行为 |
+
+**刻意保留的内部标识符**（改名会破坏样式与 JS，不属于品牌暴露）：
+
+- CSS 类名 `anzhiyufont`、`anzhiyu-icon-*` 与图标字体文件（全站图标体系）
+- CSS 变量 `--anzhiyu-*`（主题色体系）
+- JS 全局对象 `anzhiyu.*`（交互功能入口）与 DOM id `#anzhiyu-footer`
+- 第三方依赖包 `anzhiyu-theme-static`（dark / swiper / friends vue 等静态资源）、`img2color-go` 主色调 API
 
 > `package.json` 的 **`version` 刻意保持 `1.7.1`**，与上游一致。原因：`scripts/events/cdn.js` 会用该版本号拼 CDN 路径（`...@1.7.1/...`），改动会导致 CDN 资源取不到。
 
 ## 💻 安装 / 启用
 
-主题目录名沿用 **`anzhiyu`**，因此站点配置无需改动：
+### npm 安装（推荐，站点 `package.json` 声明依赖）
 
-```powershell
-# 克隆到站点主题目录
-git clone https://github.com/ShenDoyle/CBMIM-theme.git themes/anzhiyu
+```bash
+npm install github:ShenDoyle/CBMIM-theme#main --save
 ```
 
 站点 `_config.yml`：
 
 ```yaml
-theme: anzhiyu
+theme: cbmim
 ```
 
+Hexo 会自动从 `node_modules/hexo-theme-cbmim` 加载主题；主题仓更新后 `npm update hexo-theme-cbmim` 即可拉取。
+
 > 若缺少渲染器：`npm install hexo-renderer-pug hexo-renderer-stylus --save`
+
+### 内部 CDN 说明
+
+`scripts/events/cdn.js` 的 internal CDN 依赖包名（现为 `hexo-theme-cbmim`）。该包**没有发布到 npm**，所以 `CDN.internal_provider` 只能用 `local`（默认）或 `custom`（用 `custom_format` 指向 jsDelivr 的 GitHub 源，如 `https://cdn.jsdelivr.net/gh/ShenDoyle/CBMIM-theme@main/source/${file}`）。
 
 ## ⚙ 覆盖配置
 
@@ -89,11 +105,11 @@ git remote -v
 
 ## 🚀 应用到站点
 
-站点路径：`~/OneDrive/Backup/GitHub Page/anviyu/themes/anzhiyu`
+站点：`~/OneDrive/Backup/GitHub Page/anviyu`，主题以 **npm 依赖**（`hexo-theme-cbmim`，来源本仓库）安装，站点目录内**不再保留主题源码**。
 
-流程：**本仓库提交 → 同步到站点 `themes/anzhiyu` → 提交站点仓库 → 构建发布（cbm.im）**。
+流程：**本仓库提交 → push → 站点 `npm update hexo-theme-cbmim` → 提交站点仓库 → 构建发布（cbm.im）**。
 
-> 后续可选：把站点的 `themes/anzhiyu` 改为指向本仓库的 `git clone` / submodule，实现单一来源，改主题只需改一处。
+覆盖配置为站点根目录的 `_config.cbmim.yml`（Hexo 原生 `_config.<theme>.yml` 机制）。
 
 ## 📁 目录结构
 

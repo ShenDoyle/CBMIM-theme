@@ -15,53 +15,53 @@ hexo.extend.filter.register("before_generate", () => {
   const thirdPartySrc = hexo.render.renderSync({ path: path.join(hexo.theme_dir, "/plugins.yml"), engine: "yaml" });
   const internalSrc = {
     main: {
-      name: "hexo-theme-anzhiyu",
+      name: "hexo-theme-cbmim",
       file: "js/main.js",
       version,
     },
     utils: {
-      name: "hexo-theme-anzhiyu",
+      name: "hexo-theme-cbmim",
       file: "js/utils.js",
       version,
     },
     translate: {
-      name: "hexo-theme-anzhiyu",
+      name: "hexo-theme-cbmim",
       file: "js/tw_cn.js",
       version,
     },
     local_search: {
-      name: "hexo-theme-anzhiyu",
+      name: "hexo-theme-cbmim",
       file: "js/search/local-search.js",
       version,
     },
     algolia_js: {
-      name: "hexo-theme-anzhiyu",
+      name: "hexo-theme-cbmim",
       file: "js/search/algolia.js",
       version,
     },
     random_friends_post_js: {
-      name: "hexo-theme-anzhiyu",
-      file: "js/anzhiyu/random_friends_post.js",
+      name: "hexo-theme-cbmim",
+      file: "js/cbmim/random_friends_post.js",
       version,
     },
     right_click_menu_js: {
-      name: "hexo-theme-anzhiyu",
-      file: "js/anzhiyu/right_click_menu.js",
+      name: "hexo-theme-cbmim",
+      file: "js/cbmim/right_click_menu.js",
       version,
     },
     comment_barrage_js: {
-      name: "hexo-theme-anzhiyu",
-      file: "js/anzhiyu/comment_barrage.js",
+      name: "hexo-theme-cbmim",
+      file: "js/cbmim/comment_barrage.js",
       version,
     },
     ai_abstract_js: {
-      name: "hexo-theme-anzhiyu",
-      file: "js/anzhiyu/ai_abstract.js",
+      name: "hexo-theme-cbmim",
+      file: "js/cbmim/ai_abstract.js",
       version,
     },
     people_js: {
-      name: "hexo-theme-anzhiyu",
-      file: "js/anzhiyu/people.js",
+      name: "hexo-theme-cbmim",
+      file: "js/cbmim/people.js",
       version,
     },
   };

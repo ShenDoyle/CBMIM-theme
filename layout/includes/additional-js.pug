@@ -32,10 +32,10 @@ div
 
   //- 控制台打印信息
   if theme.console.enable
-    != partial("includes/anzhiyu/log-js.pug", {}, { cache: true })
+    != partial("includes/cbmim/log-js.pug", {}, { cache: true })
   
   //- 随机文章
-  script(async src="/anzhiyu/random.js")
+  script(async src="/cbmim/random.js")
 
   //- 页脚计时器
   if theme.footer.runtime.enable
@@ -74,7 +74,7 @@ div
     if commentsJsLoad
       include ./third-party/comments/js.pug
     
-    input(type="hidden" name="page-type" id="page-type" value=(page.type ? page.type : (is_post() ? "post" : (is_category() ? "categories" : "anzhiyu"))))
+    input(type="hidden" name="page-type" id="page-type" value=(page.type ? page.type : (is_post() ? "post" : (is_category() ? "categories" : "cbmim"))))
 
     //- 评论弹幕
     if theme.comment_barrage_config.enable && theme.comments.use == 'Twikoo' && page.comments

@@ -16,7 +16,7 @@ hexo.extend.filter.register(
       social: null,
       favicon: "/favicon.ico",
       avatar: {
-        img: "https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg",
+        img: null,
         effect: false,
       },
       disable_top_img: false,
@@ -90,7 +90,7 @@ hexo.extend.filter.register(
         enable: true,
         decode: false,
         author_href: null,
-        location: "长沙",
+        location: null,
         license: "CC BY-NC-SA 4.0",
         license_url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
         avatarSinks: false,
@@ -131,23 +131,18 @@ hexo.extend.filter.register(
         runtime: {
           enable: false,
           launch_time: "04/01/2021 00:00:00",
-          work_img: "https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg",
-          work_description: "距离月入25k也就还差一个大佬带我~",
-          offduty_img: "https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg",
-          offduty_description: "下班了就该开开心心的玩耍，嘿嘿~",
+          work_img: null,
+          work_description: null,
+          offduty_img: null,
+          offduty_description: null,
         },
         bdageitem: {
           enable: false,
           list: [
             {
               link: "https://hexo.io/",
-              shields: "https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg",
+              shields: "https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo",
               message: "博客框架为Hexo_v5.4.0",
-            },
-            {
-              link: "https://hexo.anheyu.com/",
-              shields: "https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg",
-              message: "本站使用AnZhiYu主题",
             },
           ],
         },
@@ -171,7 +166,7 @@ hexo.extend.filter.register(
           },
           linkList: [
             {
-              link: "https://github.com/anzhiyu-c/hexo-theme-anzhiyu",
+              link: "https://github.com/ShenDoyle/CBMIM-theme",
               text: "主题",
             },
           ],
@@ -208,7 +203,7 @@ hexo.extend.filter.register(
         },
         card_announcement: {
           enable: false,
-          content: "欢迎来看我的博客鸭~",
+          content: "欢迎来看我的博客~",
         },
         card_weixin: {
           enable: true,
@@ -594,10 +589,10 @@ hexo.extend.filter.register(
       },
       post_head_ai_description: {
         enable: true,
-        gptName: "AnZhiYu",
+        gptName: "CBMIM",
         mode: "local",
         switchBtn: false,
-        btnLink: "https://afdian.net/item/886a79d4db6711eda42a52540025c377",
+        btnLink: null,
         randomNum: 3,
         basicWordCount: 1000,
         key: null,
@@ -620,7 +615,7 @@ hexo.extend.filter.register(
       rightClickMenu: { enable: false },
       peoplecanvas: {
         enable: true,
-        img: "https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png",
+        img: null,
       },
       dynamicEffect: {
         postTopWave: true,
