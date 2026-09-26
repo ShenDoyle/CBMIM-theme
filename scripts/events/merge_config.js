@@ -35,8 +35,8 @@ hexo.extend.filter.register(
         default_cover: null,
       },
       error_img: {
-        flink: "/img/friend_404.gif",
-        post_page: "/img/404.jpg",
+        flink: "/img/friend_404.webp",
+        post_page: "/img/404.webp",
       },
       error_404: {
         enable: true,
