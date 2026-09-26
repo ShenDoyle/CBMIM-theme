@@ -82,7 +82,7 @@ Hexo 会自动从 `node_modules/hexo-theme-cbmim` 加载主题；主题仓更新
 
 ## 🚀 应用到站点
 
-站点：`~/OneDrive/Backup/GitHub Page/anviyu`，主题以 **npm 依赖**（`hexo-theme-cbmim`，来源本仓库）安装，站点目录内**不保留主题源码**。
+主题以 **npm 依赖**（`hexo-theme-cbmim`，来源本仓库）安装，站点目录内**不保留主题源码**。
 
 流程：**本仓库提交 → push → 站点 `npm update hexo-theme-cbmim` → 提交站点仓库 → 构建发布（cbm.im）**。
 
