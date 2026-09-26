@@ -1,13 +1,15 @@
 # CBMIM theme
 
-cbm.im（南城左立方）博客专用的 **anzhiyu 主题定制版**，私有仓库，不对外发布。
+cbm.im（南城左立方）博客专用的 **anzhiyu 主题定制版**。
+
+上游：<https://github.com/anzhiyu-c/hexo-theme-anzhiyu>　本站仓库：<https://github.com/ShenDoyle/CBMIM-theme>
 
 ## 这个仓库是什么
 
 - **基线**：`anzhiyu-c/hexo-theme-anzhiyu` v1.7.1（上游 commit `07114b6`，dev 分支）
 - **内容**：站点 `anviyu/themes/anzhiyu` 当前实际正在使用的主题状态（官方基线 + 本地改造）
 - **用途**：主题的版本库与备份；以后主题改动先在这里提交，再同步到站点
-- **可见性**：private
+- **可见性**：public（如需转私有，在仓库 Settings → General → Danger Zone 一键切换，不影响已有提交）
 
 ## 相对官方的本地改造
 
