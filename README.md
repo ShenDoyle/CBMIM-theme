@@ -86,6 +86,10 @@ Hexo 会自动从 `node_modules/hexo-theme-cbmim` 加载主题；主题仓更新
 
 流程：**本仓库提交 → push → 站点 `npm update hexo-theme-cbmim` → 提交站点仓库 → 构建发布（cbm.im）**。
 
+> ⚠️ 主题 `package.json` 的 `version` 必须保持 `1.7.1` 不动：本主题的 `scripts/events/cdn.js` 用它拼 CDN 路径，改了会导致 CDN 资源 404。
+
+📘 **完整手册见 [`docs/使用与部署手册.md`](docs/使用与部署手册.md)** —— 仓库分工、三种发布触发方式、从零到线上的可执行命令、改主题/回滚流程、标签速查、封面规则、排错手册、验收清单。
+
 ## 📁 目录结构
 
 ```
