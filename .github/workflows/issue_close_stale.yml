@@ -5,17 +5,24 @@ on:
     - cron: "0 0 */7 * *"
   workflow_dispatch:
 
+permissions:
+  issues: write
+
 jobs:
   close-inactive:
     runs-on: ubuntu-latest
     steps:
       - name: close-issues
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: "close-issues"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          labels: "stale"
-          inactive-day: 60
-          close-reason: "not_planned"
-          body: |
-            Hello @${{ github.event.issue.user.login }}, this issue was closed due to inactive more than 60 days. You can reopen or recreate it if you think it should continue. Thank you for your contributions again.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CUTOFF=$(date -u -d '60 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          issues=$(gh issue list --repo "${{ github.repository }}" \
+            --label "stale" --state open --limit 200 --json number,updatedAt \
+            --jq ".[] | select(.updatedAt < \"$CUTOFF\") | .number")
+          for n in $issues; do
+            gh issue close "$n" --repo "${{ github.repository }}" \
+              --reason "not planned" \
+              --comment "你好，此 issue 因超过 60 天无活动被关闭。如需继续，可重新打开或新建 issue。感谢你的贡献。"
+            echo "closed #$n"
+          done
